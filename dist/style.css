@@ -15,7 +15,8 @@
 .unit-toggle{font-size:12px}
 .icon-button{min-width:44px;justify-content:center}
 .thermometer{touch-action:none;user-select:none;border-radius:12px;position:relative;cursor:grab;scroll-margin-bottom:100px}
-.thermometer:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.thermometer:focus-visible{outline:none}
+.thermometer:focus-visible .handle-face{stroke:var(--focus);stroke-width:4px}
 .lab{align-self:stretch}
 .thermometer[aria-disabled=true]{cursor:default}.thermometer[aria-disabled=true] .drag-handle-label{display:none}.thermometer[aria-disabled=true] .handle-face{fill:#eee9fa;stroke:#887cab}
 .thermometer[aria-disabled=false]:hover #liquid,.thermometer[aria-disabled=false]:hover #liquid-bulb,.thermometer[aria-disabled=false]:focus-visible #liquid,.thermometer[aria-disabled=false]:focus-visible #liquid-bulb,.thermometer.dragging #liquid,.thermometer.dragging #liquid-bulb{fill:#bf3e70}
