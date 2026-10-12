@@ -48,3 +48,7 @@ Skrin baharu direka untuk membantu kanak-kanak memahami hubungan antara bacaan s
 ## Kemas kini interaksi terus
 
 Slider mendatar dibuang. Murid menyeret cecair atau pemegang dalam termometer terus ke atas/bawah; hover dan fokus menukar warnanya. Arahan serta semua soalan menyebut cecair dalam termometer dengan jelas. Contoh: Apabila suhu berubah daripada 10°C kepada 30°C, adakah aras cecair dalam termometer naik atau turun? Seretan menggunakan Pointer Events (tetikus/sentuhan), dengan anak panah, Home/End dan butang −/+ sebagai alternatif. Ujian browser mengesahkan seretan 10→30°C, had suhu, tiga misi dan tiada input range mendatar. Simulasi paparan telefon diperiksa; belum diuji pada peranti sentuh sebenar.
+
+## Pemudahan kawalan
+
+Bahagian kawalan bawah, butang −/+ dan suhu contoh telah dibuang atas permintaan pengguna. Hover menggunakan cursor grab, seretan menggunakan grabbing. Sokongan papan kekunci kekal pada termometer; petunjuk dan bantuan tidak lagi merujuk butang yang dibuang.

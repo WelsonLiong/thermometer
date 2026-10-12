@@ -24,3 +24,5 @@ Lihat `LAPORAN.md` untuk pemetaan prinsip, protokol think-aloud dan rasional 150
 ## Aset
 
 Ilustrasi asli dihasilkan dengan built-in ImageGen; prompt penuh direkodkan dalam `dist/assets/scenes.png.json`. Fredoka dan Nunito diambil daripada Google Fonts, berlesen SIL Open Font License. Sumber: https://github.com/google/fonts/tree/main/ofl/fredoka dan https://github.com/google/fonts/tree/main/ofl/nunito. Ikon SVG dan termometer ialah grafik geometri yang ditulis untuk prototaip ini.
+
+Kemas kini: bahagian butang −/+, suhu contoh dan arahan berulang di bawah alat telah dibuang. Cursor tangan terbuka menunjukkan cecair boleh diseret; cursor menggenggam muncul ketika seretan. Kekunci anak panah, PageUp/PageDown dan Home/End kekal sebagai alternatif.

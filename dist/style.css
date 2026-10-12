@@ -14,8 +14,9 @@
 @media(max-width:650px){.controls label{flex-wrap:wrap;gap:4px}.scene-tag{font-size:12px}.controls label span{font-size:12px}.presets{flex-wrap:wrap}.presets button{padding:6px 8px}.context p{font-size:13px}.bottom-note{font-size:11px}body[data-mode=mission][data-phase=adjust] #check{position:fixed;bottom:14px;left:18px;right:18px;width:calc(100% - 36px);z-index:6;box-shadow:0 5px 22px #183f3540}body[data-mode=mission][data-phase=adjust]{padding-bottom:75px}}
 .unit-toggle{font-size:12px}
 .icon-button{min-width:44px;justify-content:center}
-.thermometer{touch-action:none;user-select:none;border-radius:12px;position:relative;cursor:ns-resize;scroll-margin-bottom:100px}
+.thermometer{touch-action:none;user-select:none;border-radius:12px;position:relative;cursor:grab;scroll-margin-bottom:100px}
 .thermometer:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.lab{align-self:start}
 .thermometer[aria-disabled=true]{cursor:default}.thermometer[aria-disabled=true] .drag-handle-label{display:none}.thermometer[aria-disabled=true] .handle-face{fill:#eee9fa;stroke:#887cab}
 .thermometer[aria-disabled=false]:hover #liquid,.thermometer[aria-disabled=false]:hover #liquid-bulb,.thermometer[aria-disabled=false]:focus-visible #liquid,.thermometer[aria-disabled=false]:focus-visible #liquid-bulb,.thermometer.dragging #liquid,.thermometer.dragging #liquid-bulb{fill:#bf3e70}
 .thermometer[aria-disabled=false]:hover .handle-face,.thermometer[aria-disabled=false]:focus-visible .handle-face,.thermometer.dragging .handle-face{fill:#fbe3ed;stroke:#973055}.thermometer.dragging{cursor:grabbing}

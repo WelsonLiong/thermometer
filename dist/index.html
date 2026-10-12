@@ -27,7 +27,7 @@
     <nav class="mode-nav" aria-label="Mod pembelajaran"><button id="mission-mode" class="mode-button active" aria-pressed="true">Misi suhu</button><button id="explore-mode" class="mode-button" aria-pressed="false">Teroka bebas</button></nav>
     <div class="top-actions"><button id="sound" class="icon-button" aria-label="Hidupkan bunyi" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>Bunyi</span><span class="sound-state">off</span></button><button id="help" class="icon-button" aria-label="Cara main" aria-expanded="false" aria-controls="help-panel"><svg><use href="#i-help"/></svg><span>Cara main</span></button></div>
   </header>
-  <section id="help-panel" class="help-panel" hidden><h2>Kenali termometer kamu</h2><p><strong>°C</strong> bermaksud darjah Celsius, unit untuk mengukur suhu. Baca nombor pada aras hujung cecair dalam termometer. Suhu lebih tinggi menyebabkan aras cecair dalam termometer naik.</p><p>Dalam misi: buat ramalan, seret cecair dalam termometer ke atas atau ke bawah, kemudian semak. Kamu juga boleh menekan butang − / +. Dengan papan kekunci, fokus pada termometer dan tekan anak panah. Setiap langkah mengubah suhu sebanyak 1°C.</p></section>
+  <section id="help-panel" class="help-panel" hidden><h2>Kenali termometer kamu</h2><p><strong>°C</strong> bermaksud darjah Celsius, unit untuk mengukur suhu. Baca nombor pada aras hujung cecair dalam termometer. Suhu lebih tinggi menyebabkan aras cecair dalam termometer naik.</p><p>Dalam misi: buat ramalan, seret cecair dalam termometer ke atas atau ke bawah, kemudian semak. Dengan papan kekunci, fokus pada termometer dan tekan anak panah. Setiap langkah mengubah suhu sebanyak 1°C.</p></section>
   <main>
     <div class="intro"><div><h1>Jom teroka <span>suhu!</span><svg class="heading-sun" aria-hidden="true"><use href="#i-sun"/></svg></h1><p>Sejuk atau panas? Mari cari tahu bersama.</p></div><ol class="learning-path" aria-label="Langkah pembelajaran"><li class="current" data-phase="predict"><span>1</span>Ramal</li><li data-phase="adjust"><span>2</span>Laras</li><li data-phase="explain"><span>3</span>Fahami</li></ol></div>
     <div class="workspace">
@@ -56,11 +56,6 @@
             <div class="context-caption"><span id="weather-icon"><svg><use href="#i-leaf"/></svg></span><div><h3 id="feeling">Lebih sejuk</h3><p id="context-copy">Cuba naikkan suhu. Perhatikan cecair dalam termometer!</p></div></div>
             <div id="discovery" class="discovery"><svg><use href="#i-thermo"/></svg><p>Suhu naik, aras cecair dalam termometer pun <strong>naik.</strong></p></div>
           </div>
-        </div>
-        <div class="controls">
-          <div class="adjust-label">Seret aras cecair <span id="lock-hint">Buat ramalan dahulu</span></div>
-          <div class="fine-adjust"><button id="minus" class="step-button" aria-label="Kurangkan suhu 1 darjah Celsius" disabled>−</button><p>Seret terus dalam termometer.<br><span>Butang − / + untuk perubahan 1°C.</span></p><button id="plus" class="step-button" aria-label="Tambah suhu 1 darjah Celsius" disabled>+</button></div>
-          <div class="presets" aria-label="Cuba suhu contoh"><span>Cuba juga:</span><button data-temp="0" disabled><svg><use href="#i-snow"/></svg>0°C</button><button data-temp="20" disabled><svg><use href="#i-leaf"/></svg>20°C</button><button data-temp="30" disabled><svg><use href="#i-sun"/></svg>30°C</button></div>
         </div>
       </section>
       <aside class="mission" aria-labelledby="mission-title">
