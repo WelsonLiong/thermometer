@@ -4,7 +4,7 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#fbf7ed">
   <meta name="description" content="Ramal, laras dan fahami suhu bersama termometer interaktif. Aktiviti matematik ceria dalam Bahasa Melayu.">
-  <title>Jom Teroka Suhu! · Dunia Matematik</title>
+  <title>Jom Terokai Termometer · Dunia Matematik</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
 </head>
@@ -27,9 +27,9 @@
     <nav class="mode-nav" aria-label="Mod pembelajaran"><button id="mission-mode" class="mode-button active" aria-pressed="true">Misi suhu</button><button id="explore-mode" class="mode-button" aria-pressed="false">Teroka bebas</button></nav>
     <div class="top-actions"><button id="sound" class="icon-button" aria-label="Hidupkan bunyi" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>Bunyi</span><span class="sound-state">off</span></button><button id="help" class="icon-button" aria-label="Cara main" aria-expanded="false" aria-controls="help-panel"><svg><use href="#i-help"/></svg><span>Cara main</span></button></div>
   </header>
-  <section id="help-panel" class="help-panel" hidden><h2>Kenali termometer kamu</h2><p><strong>°C</strong> bermaksud darjah Celsius, unit untuk mengukur suhu. Baca nombor pada aras hujung cecair dalam termometer. Suhu lebih tinggi menyebabkan aras cecair dalam termometer naik.</p><p>Dalam misi: buat ramalan, seret cecair dalam termometer ke atas atau ke bawah, kemudian semak. Dengan papan kekunci, fokus pada termometer dan tekan anak panah. Setiap langkah mengubah suhu sebanyak 1°C.</p></section>
+  <section id="help-panel" class="help-panel" hidden><h2>Kenali termometer kamu</h2><p><strong>°C</strong> bermaksud darjah Celsius, unit untuk mengukur suhu. Baca nombor pada aras hujung cecair dalam termometer. Suhu lebih tinggi menyebabkan aras cecair dalam termometer naik.</p><p>Dalam misi, pilih ramalan dahulu. Kemudian fokuskan termometer dan tekan ↑ untuk menaikkan aras cecair atau ↓ untuk menurunkannya. Setiap tekanan mengubah suhu sebanyak 1°C. Kamu juga boleh menyeret cecair.</p></section>
   <main>
-    <div class="intro"><div><h1>Jom teroka <span>suhu!</span><svg class="heading-sun" aria-hidden="true"><use href="#i-sun"/></svg></h1><p>Sejuk atau panas? Mari cari tahu bersama.</p></div><ol class="learning-path" aria-label="Langkah pembelajaran"><li class="current" data-phase="predict"><span>1</span>Ramal</li><li data-phase="adjust"><span>2</span>Laras</li><li data-phase="explain"><span>3</span>Fahami</li></ol></div>
+    <div class="intro"><div><h1>Jom Terokai <span>Termometer</span><svg class="heading-sun" aria-hidden="true"><use href="#i-sun"/></svg></h1><p>Sejuk atau panas? Mari cari tahu bersama.</p></div><ol class="learning-path" aria-label="Langkah pembelajaran"><li class="current" data-phase="predict"><span>1</span>Ramal</li><li data-phase="adjust"><span>2</span>Laras</li><li data-phase="explain"><span>3</span>Fahami</li></ol></div>
     <div class="workspace">
       <section class="lab" aria-labelledby="lab-title">
         <div class="lab-top"><h2 id="lab-title"><svg><use href="#i-thermo"/></svg>Termometer kamu</h2><button id="fahrenheit" class="unit-toggle" aria-pressed="false">Lihat °F juga</button></div>
@@ -37,7 +37,7 @@
           <div class="instrument">
             <div class="reading"><output id="temperature">10</output><span>°C</span></div>
             <span id="f-reading" class="f-reading" hidden>50°F</span>
-            <div class="thermometer" id="thermometer" role="slider" tabindex="0" aria-label="Aras cecair dalam termometer" aria-describedby="drag-instruction" aria-orientation="vertical" aria-valuemin="-10" aria-valuemax="50" aria-valuenow="10" aria-valuetext="10 darjah Celsius" aria-disabled="true"><svg viewBox="0 0 235 365" id="thermo-svg" aria-hidden="true">
+            <div class="thermometer" id="thermometer" role="slider" tabindex="0" aria-label="Aras cecair dalam termometer" aria-describedby="drag-instruction" aria-keyshortcuts="ArrowUp ArrowDown" aria-orientation="vertical" aria-valuemin="-10" aria-valuemax="50" aria-valuenow="10" aria-valuetext="10 darjah Celsius" aria-disabled="true"><svg viewBox="0 0 235 365" id="thermo-svg" aria-hidden="true">
               <g id="ticks"></g><rect x="106" y="22" width="42" height="285" rx="21" fill="#fffdf8" stroke="#655d91" stroke-width="3"/>
               <circle cx="127" cy="319" r="32" fill="#fffdf8" stroke="#655d91" stroke-width="3"/>
               <rect x="116" y="31" width="22" height="276" rx="11" fill="#eee9fa"/>
@@ -49,7 +49,7 @@
               <g id="drag-handle" transform="translate(0 214)"><rect class="handle-hit" x="85" y="-35" width="84" height="70" fill="transparent"/><rect class="handle-face" x="105" y="-16" width="44" height="32" rx="10" fill="#fffdf8" stroke="#655d91" stroke-width="2.5"/><path d="m119-5 8-5 8 5m-16 10 8 5 8-5" fill="none" stroke="#655d91" stroke-width="2.5" stroke-linecap="round"/><path d="M169-7v14m-4-9 4-5 4 5m-8 4 4 5 4-5" fill="none" stroke="#655d91" stroke-width="2"/><text x="181" y="5" class="drag-handle-label">Seret</text></g>
             </svg></div>
             <p class="scale-note">Setiap tanda kecil = 5°C</p>
-            <p id="drag-instruction" class="drag-instruction">Pilih ramalan dahulu untuk menyeret cecair.</p>
+            <p id="drag-instruction" class="drag-instruction">Pilih ramalan dahulu. Selepas itu, ↑ naikkan aras dan ↓ turunkan aras (1°C setiap tekanan).</p>
           </div>
           <div class="context">
             <div class="scene-wrap"><div id="scene" class="scene scene-room" role="img" aria-label="Ilustrasi ruang bacaan dengan tumbuhan dan tingkap"></div><span class="scene-tag"><svg><use href="#i-leaf"/></svg><span id="scene-title">Sudut bacaan</span></span></div>
@@ -63,7 +63,7 @@
         <div class="mission-symbol" aria-hidden="true"><svg id="mission-icon"><use href="#i-sun"/></svg><span class="symbol-orbit"></span></div>
         <h2 id="mission-title">Hari di taman</h2><p id="mission-story" class="mission-story">Bayangkan suhu di taman ialah <strong>30°C.</strong></p>
         <div id="prediction-section"><h3>Ramal dahulu!</h3><p id="prediction-question">Apabila suhu berubah daripada 10°C kepada 30°C, adakah aras cecair dalam termometer naik atau turun?</p><div class="choices"><button id="higher" data-prediction="higher"><span aria-hidden="true">↑</span>Naik</button><button id="lower" data-prediction="lower"><span aria-hidden="true">↓</span>Turun</button></div></div>
-        <div id="adjust-section" hidden><h3>Sekarang, cuba sendiri.</h3><p id="adjust-instruction">Laras termometer kepada <strong>30°C</strong>, kemudian semak jawapan.</p></div>
+        <div id="adjust-section" hidden><h3>Sekarang, cuba sendiri.</h3><p id="adjust-instruction">Laras termometer kepada <strong>30°C</strong> dengan ↑/↓ atau seret cecair, kemudian semak jawapan.</p></div>
         <div id="explain-section" hidden><h3>Satu soalan lagi!</h3><p id="explain-question"></p><div class="choices" id="explain-choices"></div></div>
         <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true" hidden></div>
         <button id="check" class="primary-button" disabled>Semak suhu <svg><use href="#i-check"/></svg></button>
