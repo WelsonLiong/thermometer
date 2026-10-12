@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fbf7ed">
+  <meta name="description" content="Ramal, laras dan fahami suhu bersama termometer interaktif. Aktiviti matematik ceria dalam Bahasa Melayu.">
+  <title>Jom Teroka Suhu! · Dunia Matematik</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+<svg class="icon-defs" aria-hidden="true"><defs>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM17 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4 3c-1 .5-1 1-1 2m0 3h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></symbol>
+  <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M9 14V5a3 3 0 0 1 6 0v9a5 5 0 1 1-6 0zM12 8v10"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M4 10l4-1-1-4m13 9-4 1 1 4M4 14l4 1-1 4m13-9-4-1 1-4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3c0 13-5 18-12 15C1 15 5 4 20 3zM4 21 15 10"/></symbol>
+</defs></svg>
+<div class="page">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Dunia Matematik, mula semula"><span class="brand-mark"><svg><use href="#i-sun"/></svg></span><span>Dunia<span class="brand-second">Matematik</span></span></a>
+    <nav class="mode-nav" aria-label="Mod pembelajaran"><button id="mission-mode" class="mode-button active" aria-pressed="true">Misi suhu</button><button id="explore-mode" class="mode-button" aria-pressed="false">Teroka bebas</button></nav>
+    <div class="top-actions"><button id="sound" class="icon-button" aria-label="Hidupkan bunyi" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>Bunyi</span><span class="sound-state">off</span></button><button id="help" class="icon-button" aria-expanded="false" aria-controls="help-panel"><svg><use href="#i-help"/></svg><span>Cara main</span></button></div>
+  </header>
+  <section id="help-panel" class="help-panel" hidden><h2>Kenali termometer kamu</h2><p><strong>°C</strong> bermaksud darjah Celsius, unit untuk mengukur suhu. Baca nombor pada aras hujung cecair. Suhu lebih tinggi menyebabkan aras cecair naik.</p><p>Dalam misi: buat ramalan, gerakkan pelaras, kemudian semak. Gunakan butang − / + atau kekunci anak panah pada pelaras. Setiap langkah mengubah suhu sebanyak 1°C.</p></section>
+  <main>
+    <div class="intro"><div><h1>Jom teroka <span>suhu!</span><svg class="heading-sun" aria-hidden="true"><use href="#i-sun"/></svg></h1><p>Sejuk atau panas? Mari cari tahu bersama.</p></div><ol class="learning-path" aria-label="Langkah pembelajaran"><li class="current" data-phase="predict"><span>1</span>Ramal</li><li data-phase="adjust"><span>2</span>Laras</li><li data-phase="explain"><span>3</span>Fahami</li></ol></div>
+    <div class="workspace">
+      <section class="lab" aria-labelledby="lab-title">
+        <div class="lab-top"><h2 id="lab-title"><svg><use href="#i-thermo"/></svg>Termometer kamu</h2><button id="fahrenheit" class="unit-toggle" aria-pressed="false">Lihat °F juga</button></div>
+        <div class="lab-content">
+          <div class="instrument">
+            <div class="reading"><output id="temperature" for="slider">10</output><span>°C</span></div>
+            <span id="f-reading" class="f-reading" hidden>50°F</span>
+            <div class="thermometer" aria-hidden="true"><svg viewBox="0 0 235 365" id="thermo-svg">
+              <g id="ticks"></g><rect x="106" y="22" width="42" height="285" rx="21" fill="#fffdf8" stroke="#655d91" stroke-width="3"/>
+              <circle cx="127" cy="319" r="32" fill="#fffdf8" stroke="#655d91" stroke-width="3"/>
+              <rect x="116" y="31" width="22" height="276" rx="11" fill="#eee9fa"/>
+              <rect id="liquid" x="116" y="213" width="22" height="102" rx="11" fill="#ec6559"/>
+              <circle cx="127" cy="319" r="23" fill="#ec6559"/><path d="M119 312c-5 3-6 10-3 15" fill="none" stroke="#ffb4a1" stroke-width="4" stroke-linecap="round"/>
+              <g id="level-marker"><path d="m149 0 9-6v12z" fill="#574579"/><path d="M159 0h16" stroke="#574579" stroke-width="2"/></g>
+              <g id="target-marker" hidden><path d="M80 0h85" stroke="#246c53" stroke-width="2" stroke-dasharray="4 4"/><text x="173" y="5" fill="#24533e" font-size="12" font-weight="800">Sasaran</text></g>
+            </svg></div>
+            <p class="scale-note">Setiap tanda kecil = 5°C</p>
+          </div>
+          <div class="context">
+            <div class="scene-wrap"><div id="scene" class="scene scene-room" role="img" aria-label="Ilustrasi ruang bacaan dengan tumbuhan dan tingkap"></div><span class="scene-tag"><svg><use href="#i-leaf"/></svg><span id="scene-title">Sudut bacaan</span></span></div>
+            <div class="context-caption"><span id="weather-icon"><svg><use href="#i-leaf"/></svg></span><div><h3 id="feeling">Lebih sejuk</h3><p id="context-copy">Cuba naikkan suhu. Perhatikan aras cecair!</p></div></div>
+            <div id="discovery" class="discovery"><svg><use href="#i-thermo"/></svg><p>Suhu naik, aras cecair pun <strong>naik.</strong></p></div>
+          </div>
+        </div>
+        <div class="controls">
+          <label for="slider" id="slider-label">Laras suhu kamu <span id="lock-hint">Buat ramalan dahulu</span></label>
+          <div class="slider-row"><button id="minus" class="step-button" aria-label="Kurangkan suhu 1 darjah Celsius" disabled>−</button><div class="range-wrap"><input id="slider" type="range" min="-10" max="50" step="1" value="10" aria-valuetext="10 darjah Celsius" disabled><div class="range-labels"><span>−10°C</span><span>20°C</span><span>50°C</span></div></div><button id="plus" class="step-button" aria-label="Tambah suhu 1 darjah Celsius" disabled>+</button></div>
+          <div class="presets" aria-label="Cuba suhu contoh"><span>Cuba juga:</span><button data-temp="0" disabled><svg><use href="#i-snow"/></svg>0°C</button><button data-temp="20" disabled><svg><use href="#i-leaf"/></svg>20°C</button><button data-temp="30" disabled><svg><use href="#i-sun"/></svg>30°C</button></div>
+        </div>
+      </section>
+      <aside class="mission" aria-labelledby="mission-title">
+        <div class="mission-top"><span id="mission-count">Misi 1 daripada 3</span><div class="stars" aria-label="0 daripada 3 misi selesai"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div></div>
+        <div class="mission-symbol" aria-hidden="true"><svg id="mission-icon"><use href="#i-sun"/></svg><span class="symbol-orbit"></span></div>
+        <h2 id="mission-title">Hari di taman</h2><p id="mission-story" class="mission-story">Bayangkan suhu di taman ialah <strong>30°C.</strong></p>
+        <div id="prediction-section"><h3>Ramal dahulu!</h3><p id="prediction-question">Berbanding 10°C, aras cecair pada 30°C akan…</p><div class="choices"><button id="higher" data-prediction="higher"><span aria-hidden="true">↑</span>Lebih tinggi</button><button id="lower" data-prediction="lower"><span aria-hidden="true">↓</span>Lebih rendah</button></div></div>
+        <div id="adjust-section" hidden><h3>Sekarang, cuba sendiri.</h3><p id="adjust-instruction">Laras termometer kepada <strong>30°C</strong>, kemudian semak jawapan.</p></div>
+        <div id="explain-section" hidden><h3>Satu soalan lagi!</h3><p id="explain-question"></p><div class="choices" id="explain-choices"></div></div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+        <button id="check" class="primary-button" disabled>Semak suhu <svg><use href="#i-check"/></svg></button>
+        <button id="next" class="primary-button" hidden>Misi seterusnya <svg><use href="#i-arrow"/></svg></button>
+        <button id="hint" class="hint-button">Perlukan petunjuk?</button><p id="hint-text" class="hint-text" hidden></p>
+        <p class="mission-footer">Tak mengapa kalau tersilap.<br>Kita belajar dengan mencuba!</p>
+      </aside>
+    </div>
+    <section class="takeaway"><span class="takeaway-icon"><svg><use href="#i-thermo"/></svg></span><p><strong>Ingat ini:</strong> nombor suhu lebih besar, suhu lebih tinggi.</p><button id="restart"><svg><use href="#i-reset"/></svg>Mula semula</button></section>
+    <p class="bottom-note">Belajar dengan ramalan. Faham melalui penerokaan.</p>
+  </main>
+</div>
+<div id="celebration" class="celebration" aria-hidden="true"></div>
+</body></html>
