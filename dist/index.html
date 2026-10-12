@@ -25,9 +25,9 @@
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="Dunia Matematik, mula semula"><span class="brand-mark"><svg><use href="#i-sun"/></svg></span><span>Dunia<span class="brand-second">Matematik</span></span></a>
     <nav class="mode-nav" aria-label="Mod pembelajaran"><button id="mission-mode" class="mode-button active" aria-pressed="true">Misi suhu</button><button id="explore-mode" class="mode-button" aria-pressed="false">Teroka bebas</button></nav>
-    <div class="top-actions"><button id="sound" class="icon-button" aria-label="Hidupkan bunyi" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>Bunyi</span><span class="sound-state">off</span></button><button id="help" class="icon-button" aria-expanded="false" aria-controls="help-panel"><svg><use href="#i-help"/></svg><span>Cara main</span></button></div>
+    <div class="top-actions"><button id="sound" class="icon-button" aria-label="Hidupkan bunyi" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>Bunyi</span><span class="sound-state">off</span></button><button id="help" class="icon-button" aria-label="Cara main" aria-expanded="false" aria-controls="help-panel"><svg><use href="#i-help"/></svg><span>Cara main</span></button></div>
   </header>
-  <section id="help-panel" class="help-panel" hidden><h2>Kenali termometer kamu</h2><p><strong>°C</strong> bermaksud darjah Celsius, unit untuk mengukur suhu. Baca nombor pada aras hujung cecair. Suhu lebih tinggi menyebabkan aras cecair naik.</p><p>Dalam misi: buat ramalan, gerakkan pelaras, kemudian semak. Gunakan butang − / + atau kekunci anak panah pada pelaras. Setiap langkah mengubah suhu sebanyak 1°C.</p></section>
+  <section id="help-panel" class="help-panel" hidden><h2>Kenali termometer kamu</h2><p><strong>°C</strong> bermaksud darjah Celsius, unit untuk mengukur suhu. Baca nombor pada aras hujung cecair dalam termometer. Suhu lebih tinggi menyebabkan aras cecair dalam termometer naik.</p><p>Dalam misi: buat ramalan, seret cecair dalam termometer ke atas atau ke bawah, kemudian semak. Kamu juga boleh menekan butang − / +. Dengan papan kekunci, fokus pada termometer dan tekan anak panah. Setiap langkah mengubah suhu sebanyak 1°C.</p></section>
   <main>
     <div class="intro"><div><h1>Jom teroka <span>suhu!</span><svg class="heading-sun" aria-hidden="true"><use href="#i-sun"/></svg></h1><p>Sejuk atau panas? Mari cari tahu bersama.</p></div><ol class="learning-path" aria-label="Langkah pembelajaran"><li class="current" data-phase="predict"><span>1</span>Ramal</li><li data-phase="adjust"><span>2</span>Laras</li><li data-phase="explain"><span>3</span>Fahami</li></ol></div>
     <div class="workspace">
@@ -35,28 +35,31 @@
         <div class="lab-top"><h2 id="lab-title"><svg><use href="#i-thermo"/></svg>Termometer kamu</h2><button id="fahrenheit" class="unit-toggle" aria-pressed="false">Lihat °F juga</button></div>
         <div class="lab-content">
           <div class="instrument">
-            <div class="reading"><output id="temperature" for="slider">10</output><span>°C</span></div>
+            <div class="reading"><output id="temperature">10</output><span>°C</span></div>
             <span id="f-reading" class="f-reading" hidden>50°F</span>
-            <div class="thermometer" aria-hidden="true"><svg viewBox="0 0 235 365" id="thermo-svg">
+            <div class="thermometer" id="thermometer" role="slider" tabindex="0" aria-label="Aras cecair dalam termometer" aria-describedby="drag-instruction" aria-orientation="vertical" aria-valuemin="-10" aria-valuemax="50" aria-valuenow="10" aria-valuetext="10 darjah Celsius" aria-disabled="true"><svg viewBox="0 0 235 365" id="thermo-svg" aria-hidden="true">
               <g id="ticks"></g><rect x="106" y="22" width="42" height="285" rx="21" fill="#fffdf8" stroke="#655d91" stroke-width="3"/>
               <circle cx="127" cy="319" r="32" fill="#fffdf8" stroke="#655d91" stroke-width="3"/>
               <rect x="116" y="31" width="22" height="276" rx="11" fill="#eee9fa"/>
               <rect id="liquid" x="116" y="213" width="22" height="102" rx="11" fill="#ec6559"/>
-              <circle cx="127" cy="319" r="23" fill="#ec6559"/><path d="M119 312c-5 3-6 10-3 15" fill="none" stroke="#ffb4a1" stroke-width="4" stroke-linecap="round"/>
+              <circle id="liquid-bulb" cx="127" cy="319" r="23" fill="#ec6559"/><path d="M119 312c-5 3-6 10-3 15" fill="none" stroke="#ffb4a1" stroke-width="4" stroke-linecap="round"/>
               <g id="level-marker"><path d="m149 0 9-6v12z" fill="#574579"/><path d="M159 0h16" stroke="#574579" stroke-width="2"/></g>
               <g id="target-marker" hidden><path d="M80 0h85" stroke="#246c53" stroke-width="2" stroke-dasharray="4 4"/><text x="173" y="5" fill="#24533e" font-size="12" font-weight="800">Sasaran</text></g>
+              <rect class="drag-hit" x="88" y="24" width="82" height="327" fill="transparent"/>
+              <g id="drag-handle" transform="translate(0 214)"><rect class="handle-hit" x="85" y="-35" width="84" height="70" fill="transparent"/><rect class="handle-face" x="105" y="-16" width="44" height="32" rx="10" fill="#fffdf8" stroke="#655d91" stroke-width="2.5"/><path d="m119-5 8-5 8 5m-16 10 8 5 8-5" fill="none" stroke="#655d91" stroke-width="2.5" stroke-linecap="round"/><path d="M169-7v14m-4-9 4-5 4 5m-8 4 4 5 4-5" fill="none" stroke="#655d91" stroke-width="2"/><text x="181" y="5" class="drag-handle-label">Seret</text></g>
             </svg></div>
             <p class="scale-note">Setiap tanda kecil = 5°C</p>
+            <p id="drag-instruction" class="drag-instruction">Pilih ramalan dahulu untuk menyeret cecair.</p>
           </div>
           <div class="context">
             <div class="scene-wrap"><div id="scene" class="scene scene-room" role="img" aria-label="Ilustrasi ruang bacaan dengan tumbuhan dan tingkap"></div><span class="scene-tag"><svg><use href="#i-leaf"/></svg><span id="scene-title">Sudut bacaan</span></span></div>
-            <div class="context-caption"><span id="weather-icon"><svg><use href="#i-leaf"/></svg></span><div><h3 id="feeling">Lebih sejuk</h3><p id="context-copy">Cuba naikkan suhu. Perhatikan aras cecair!</p></div></div>
-            <div id="discovery" class="discovery"><svg><use href="#i-thermo"/></svg><p>Suhu naik, aras cecair pun <strong>naik.</strong></p></div>
+            <div class="context-caption"><span id="weather-icon"><svg><use href="#i-leaf"/></svg></span><div><h3 id="feeling">Lebih sejuk</h3><p id="context-copy">Cuba naikkan suhu. Perhatikan cecair dalam termometer!</p></div></div>
+            <div id="discovery" class="discovery"><svg><use href="#i-thermo"/></svg><p>Suhu naik, aras cecair dalam termometer pun <strong>naik.</strong></p></div>
           </div>
         </div>
         <div class="controls">
-          <label for="slider" id="slider-label">Laras suhu kamu <span id="lock-hint">Buat ramalan dahulu</span></label>
-          <div class="slider-row"><button id="minus" class="step-button" aria-label="Kurangkan suhu 1 darjah Celsius" disabled>−</button><div class="range-wrap"><input id="slider" type="range" min="-10" max="50" step="1" value="10" aria-valuetext="10 darjah Celsius" disabled><div class="range-labels"><span>−10°C</span><span>20°C</span><span>50°C</span></div></div><button id="plus" class="step-button" aria-label="Tambah suhu 1 darjah Celsius" disabled>+</button></div>
+          <div class="adjust-label">Seret aras cecair <span id="lock-hint">Buat ramalan dahulu</span></div>
+          <div class="fine-adjust"><button id="minus" class="step-button" aria-label="Kurangkan suhu 1 darjah Celsius" disabled>−</button><p>Seret terus dalam termometer.<br><span>Butang − / + untuk perubahan 1°C.</span></p><button id="plus" class="step-button" aria-label="Tambah suhu 1 darjah Celsius" disabled>+</button></div>
           <div class="presets" aria-label="Cuba suhu contoh"><span>Cuba juga:</span><button data-temp="0" disabled><svg><use href="#i-snow"/></svg>0°C</button><button data-temp="20" disabled><svg><use href="#i-leaf"/></svg>20°C</button><button data-temp="30" disabled><svg><use href="#i-sun"/></svg>30°C</button></div>
         </div>
       </section>
@@ -64,7 +67,7 @@
         <div class="mission-top"><span id="mission-count">Misi 1 daripada 3</span><div class="stars" aria-label="0 daripada 3 misi selesai"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div></div>
         <div class="mission-symbol" aria-hidden="true"><svg id="mission-icon"><use href="#i-sun"/></svg><span class="symbol-orbit"></span></div>
         <h2 id="mission-title">Hari di taman</h2><p id="mission-story" class="mission-story">Bayangkan suhu di taman ialah <strong>30°C.</strong></p>
-        <div id="prediction-section"><h3>Ramal dahulu!</h3><p id="prediction-question">Berbanding 10°C, aras cecair pada 30°C akan…</p><div class="choices"><button id="higher" data-prediction="higher"><span aria-hidden="true">↑</span>Lebih tinggi</button><button id="lower" data-prediction="lower"><span aria-hidden="true">↓</span>Lebih rendah</button></div></div>
+        <div id="prediction-section"><h3>Ramal dahulu!</h3><p id="prediction-question">Apabila suhu berubah daripada 10°C kepada 30°C, adakah aras cecair dalam termometer naik atau turun?</p><div class="choices"><button id="higher" data-prediction="higher"><span aria-hidden="true">↑</span>Naik</button><button id="lower" data-prediction="lower"><span aria-hidden="true">↓</span>Turun</button></div></div>
         <div id="adjust-section" hidden><h3>Sekarang, cuba sendiri.</h3><p id="adjust-instruction">Laras termometer kepada <strong>30°C</strong>, kemudian semak jawapan.</p></div>
         <div id="explain-section" hidden><h3>Satu soalan lagi!</h3><p id="explain-question"></p><div class="choices" id="explain-choices"></div></div>
         <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true" hidden></div>

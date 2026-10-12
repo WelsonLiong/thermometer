@@ -11,11 +11,11 @@ Untuk pratonton melalui pelayan: jalankan `node server.cjs` dan buka http://127.
 ## Aliran
 
 1. Ramal arah perubahan daripada suhu rujukan.
-2. Laraskan suhu kepada sasaran. Slider mengubah 1°C setiap langkah; tanda kecil pada termometer ialah 5°C.
+2. Laraskan suhu kepada sasaran. Seret terus cecair dalam termometer; perubahan dibundarkan kepada 1°C; tanda kecil pada termometer ialah 5°C.
 3. Semak dan baca maklum balas khusus.
 4. Jawab soalan kefahaman sebelum bergerak ke misi seterusnya.
 
-Tiga misi: 10 → 30°C, 20 → 0°C, 30 → 20°C. Teroka bebas menyokong −10 hingga 50°C. Fahrenheit ialah pilihan tambahan. Bunyi dimatikan secara lalai; boleh dihidupkan. Papan kekunci: fokus slider dan gunakan anak panah, Home atau End.
+Tiga misi: 10 → 30°C, 20 → 0°C, 30 → 20°C. Teroka bebas menyokong −10 hingga 50°C. Fahrenheit ialah pilihan tambahan. Bunyi dimatikan secara lalai; boleh dihidupkan. Papan kekunci: fokus termometer dan gunakan anak panah, Home atau End.
 
 ## Bahan tugasan
 
